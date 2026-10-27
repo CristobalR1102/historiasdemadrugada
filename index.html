@@ -28,6 +28,8 @@
     --borde: rgba(255, 255, 255, .09);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  html, body { max-width: 100%; overflow-x: hidden; }
   body {
     background: var(--noche);
     color: var(--texto);
@@ -64,7 +66,7 @@
   .intro { color: var(--suave); margin-top: 14px; }
 
   /* Botones */
-  .botones { display: grid; gap: 12px; margin-top: 28px; }
+  .botones { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 28px; }
   .btn {
     display: flex; align-items: center; gap: 14px;
     padding: 16px 18px; border-radius: 14px; text-decoration: none;
@@ -75,18 +77,18 @@
   .btn .ico { font-size: 28px; line-height: 1; }
   .btn strong { display: block; font: 700 19px/1.2 Oswald, sans-serif; text-transform: uppercase; letter-spacing: .4px; }
   .btn small { display: block; font-size: 13.5px; line-height: 1.35; opacity: .8; margin-top: 2px; }
-  .btn > span:nth-child(2) { min-width: 0; }
+  .btn > span:nth-child(2) { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+  .btn .ico, .btn .monto, .btn .flecha { flex: none; }
   .btn .flecha { margin-left: auto; font-size: 20px; opacity: .7; }
   .btn-cl { background: var(--ambar); color: #1d1406; }
   .btn-mundo { background: var(--teal-2); color: var(--texto); border: 1px solid var(--borde); }
-  .grupo-cl { display: grid; gap: 10px; }
+  .grupo-cl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .grupo-titulo {
     font: 700 15px/1 Oswald, sans-serif; text-transform: uppercase;
     letter-spacing: 1.5px; color: var(--ambar); margin-top: 6px;
   }
   .grupo-titulo span { font: 400 13px Inter, sans-serif; text-transform: none; letter-spacing: 0; color: var(--suave); }
   .btn .monto { margin-left: auto; padding-left: 8px; font: 700 22px/1 Oswald, sans-serif; white-space: nowrap; }
-  .btn strong { white-space: nowrap; }
 
   /* Celulares chicos */
   @media (max-width: 400px) {
@@ -118,7 +120,7 @@
   ul.usos li { display: flex; gap: 12px; }
   .nota { color: var(--suave); font-size: 14px; margin-top: 12px; }
 
-  .redes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .redes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
   .red {
     text-align: center; padding: 14px 6px; border-radius: 12px;
     background: var(--teal); border: 1px solid var(--borde);
