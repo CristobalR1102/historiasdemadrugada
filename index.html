@@ -40,8 +40,8 @@
   /* Portada */
   .cover {
     max-width: 960px; margin: 0 auto;
-    aspect-ratio: 3 / 1; min-height: 150px;
-    background: url(portada-web.png) 70% bottom / cover no-repeat;
+    width: 100%; height: clamp(150px, 33.333vw, 320px);
+    background: url(portada-web.png) 85% bottom / cover no-repeat;
   }
   @media (min-width: 961px) {
     .cover { border-radius: 0 0 18px 18px; }
